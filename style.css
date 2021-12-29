@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
 :root {
-    --banner1: url('assets/img/hero01.png');
-    --banner2: url('assets/img/hero02.png');
+    --hero1: url('assets/img/hero01.png');
+    --hero2: url('assets/img/hero02.png');
     --gradient-overlay: linear-gradient(90deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0.5) 100%);
 }
 
@@ -33,7 +33,7 @@ header>.container {
 }
 
 .hero-bg2 {
-    background-image: var(--banner2);
+    background-image: var(--hero2);
 }
 
 .fade {
@@ -68,11 +68,15 @@ header>.container {
 
 .hero1 {
     height: 100%;
-    background-image: var(--banner1);
+    background-image: var(--hero1);
     background-size: cover;
     background-position: 20%;
     transition: opacity 1s ease-in-out;
-    animation-name: BgFadeInOut;
+}
+
+.hero1,
+.banner>h1 {
+    animation-name: FadeInOut;
     animation-timing-function: ease-in-out;
     animation-iteration-count: infinite;
     animation-duration: 10s;
@@ -81,7 +85,7 @@ header>.container {
 
 .hero2 {
     height: 100%;
-    background-image: var(--banner2);
+    background-image: var(--hero2);
     background-size: cover;
 }
 
@@ -137,9 +141,23 @@ header>.container {
 .banner {
     text-align: center;
     margin-bottom: 100px;
+    position: relative;
 }
 
-.banner>h1 {
+.banner::after {
+    content: 'Dandelion cucumber earthnut pea peanut soko zucchini';
+    display: block;
+    position: absolute;
+    top: 20%;
+    animation-name: FadeOutIn;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-duration: 10s;
+    animation-direction: alternate;
+}
+
+.banner>h1,
+.banner::after {
     font-size: 1.5rem;
     font-weight: lighter;
     color: #333;
@@ -151,7 +169,7 @@ header>.container {
     margin-top: 1rem;
 }
 
-@keyframes BgFadeInOut {
+@keyframes FadeInOut {
     0% {
         opacity: 1;
     }
@@ -163,5 +181,20 @@ header>.container {
     }
     100% {
         opacity: 0;
+    }
+}
+
+@keyframes FadeOutIn {
+    0% {
+        opacity: 0;
+    }
+    45% {
+        opacity: 0;
+    }
+    55% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 1;
     }
 }
