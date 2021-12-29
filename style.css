@@ -1,0 +1,167 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
+:root {
+    --banner1: url('assets/img/hero01.png');
+    --banner2: url('assets/img/hero02.png');
+    --gradient-overlay: linear-gradient(90deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0.5) 100%);
+}
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Merriweather', serif;
+}
+
+header {
+    width: 100%;
+    height: 100vh;
+    /*! box-shadow: 0px 0px 8px 0px #999; */
+    position: relative;
+}
+
+header>.container {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-rows: min-content;
+    align-items: center;
+}
+
+.hero-bg2 {
+    background-image: var(--banner2);
+}
+
+.fade {
+    opacity: 0;
+}
+
+.hero-crossfade {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+}
+
+.hero-crossfade::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-image: var(--gradient-overlay);
+    z-index: 1;
+}
+
+.hero1,
+.hero2 {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.hero1 {
+    height: 100%;
+    background-image: var(--banner1);
+    background-size: cover;
+    background-position: 20%;
+    transition: opacity 1s ease-in-out;
+    animation-name: BgFadeInOut;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-duration: 10s;
+    animation-direction: alternate;
+}
+
+.hero2 {
+    height: 100%;
+    background-image: var(--banner2);
+    background-size: cover;
+}
+
+.navbar {
+    padding-top: 2rem;
+}
+
+.navbar .container {
+    text-align: center;
+}
+
+.hamburger-icon {
+    display: inline-block;
+    margin-right: .8rem;
+    vertical-align: middle;
+}
+
+.hamburger-icon span {
+    width: 1.25rem;
+    height: 2px;
+    background: #000;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.hamburger-icon span:last-child {
+    margin: 0;
+}
+
+.navbar #menu {
+    display: none;
+}
+
+.btn {
+    border: 0;
+    background: none;
+    cursor: pointer;
+    padding: .5rem;
+}
+
+.nav-toggle {
+    font-size: 1.125rem;
+    font-weight: bold;
+    font-family: inherit;
+    background-color: hsla(0, 0%, 100%, .8);
+    padding: .5rem .7rem;
+}
+
+.nav-toggle>span {
+    vertical-align: sub;
+}
+
+.banner {
+    text-align: center;
+    margin-bottom: 100px;
+}
+
+.banner>h1 {
+    font-size: 1.5rem;
+    font-weight: lighter;
+    color: #333;
+    line-height: 1.5;
+}
+
+.banner>img {
+    width: 200px;
+    margin-top: 1rem;
+}
+
+@keyframes BgFadeInOut {
+    0% {
+        opacity: 1;
+    }
+    45% {
+        opacity: 1;
+    }
+    55% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+    }
+}
