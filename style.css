@@ -95,6 +95,7 @@ header>.container {
 
 .navbar .container {
     text-align: center;
+    position: relative;
 }
 
 .hamburger-icon {
@@ -116,7 +117,43 @@ header>.container {
 }
 
 .navbar #menu {
-    display: none;
+    background-color: white;
+    padding: .5rem;
+    opacity: 0;
+    position: absolute;
+    left: 5%;
+    margin-top: 5px;
+    width: 90%;
+    transition: all ease-in .5s;
+    z-index: 3;
+    transform: scale(0%);
+}
+
+.navbar .btn:focus~#menu {
+    opacity: .9;
+    transform: scale(100%);
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.nav-item {
+    padding: .75rem 0;
+}
+
+.nav-item:hover {
+    border: #333 1px solid;
+}
+
+.nav-link,
+.nav-link:visited {
+    font-size: 1rem;
+    color: #333;
 }
 
 .btn {
