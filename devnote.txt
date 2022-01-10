@@ -1,0 +1,10 @@
+2022-01-10
+-----------
+Pseudo elements doesn't apply to img tags. I had to wrap the social media icons in tags.
+https://stackoverflow.com/questions/5843035/does-before-not-work-on-img-elements/5843164#5843164
+https://codepen.io/TimPietrusky/pen/xpesA
+https://lildude.co.uk/after-css-property-for-img-tag
+
+filter:brightness(5) property key value pair can whiten text and svg icons.
+https://stackoverflow.com/questions/7415872/change-color-of-png-image-via-css?rq=1
+https://www.freecodecamp.org/news/use-svg-images-in-css-html/
