@@ -4,6 +4,7 @@
     --hero2: url('assets/img/hero02.png');
     --gradient-overlay: linear-gradient(90deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0.5) 100%);
     --border1: #333 solid 1px;
+    --animation-bezier: cubic-bezier(.52, 0, 0, 1);
 }
 
 *,
@@ -74,11 +75,7 @@ header>.container {
 
 .hero1,
 .banner>h1 {
-    animation-name: FadeInOut;
-    animation-timing-function: ease-in-out;
-    animation-iteration-count: infinite;
-    animation-duration: 10s;
-    animation-direction: alternate;
+    animation: FadeInOut 10s ease-in-out infinite alternate;
 }
 
 .hero2 {
@@ -141,7 +138,6 @@ a {
 }
 
 .border-animation {
-    padding: .75rem 1rem;
     position: relative;
     border-top: 1px solid transparent;
     border-bottom: 1px solid transparent;
@@ -165,7 +161,6 @@ a {
 }
 
 .border-animation::after {
-    padding: .44rem 1rem;
     border-right: 1px solid transparent;
 }
 
@@ -178,6 +173,10 @@ a {
     height: 100%;
     transition-delay: .1s;
     border-color: #000;
+}
+
+.nav-item {
+    padding: .75rem 1rem;
 }
 
 .nav-item:not(:last-child) {
@@ -228,13 +227,11 @@ li.nav-item:first-child::after {
 .banner::after {
     content: 'Dandelion cucumber earthnut pea peanut soko zucchini';
     display: block;
+    width: 100%;
     position: absolute;
     bottom: 30%;
-    animation-name: FadeOutIn;
-    animation-timing-function: ease-in-out;
-    animation-iteration-count: infinite;
-    animation-duration: 10s;
-    animation-direction: alternate;
+    left: 0;
+    animation: FadeOutIn 10s ease-in-out infinite alternate;
 }
 
 .banner>h1,
@@ -283,44 +280,11 @@ li.nav-item:first-child::after {
 @keyframes FadeInTop {
     from {
         opacity: 0;
-        transform: translateY(-.25rem);
+        transform: translateY(-2rem);
     }
     to {
         opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes FadeInTop2 {
-    from {
-        opacity: 0;
-        transform: translateY(-3rem);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes FadeInBottom {
-    from {
-        opacity: 0;
-        transform: translateY(.5rem);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes FadeInBottom2 {
-    from {
-        opacity: 0;
-        transform: translateY(3rem);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
+        transform: none;
     }
 }
 
@@ -351,11 +315,6 @@ li.nav-item:first-child::after {
 .item-title {
     text-transform: uppercase;
     color: #444;
-}
-
-.item-icon,
-.item-title {
-    animation: FadeInTop .5s ease-in;
 }
 
 .item>p {
@@ -453,17 +412,11 @@ li.nav-item:first-child::after {
     border-bottom: #555 solid 1px;
 }
 
-.text-container>h3,
-.text-container>h3::after {
-    animation: FadeInTop .5s ease-in;
-}
-
 .text-container>p:nth-of-type(1) {
     color: #333;
     font-weight: 100;
     font-size: 3vw;
     line-height: 1.5;
-    animation: FadeInBottom .5s;
 }
 
 .text-container>p.price-tag {
@@ -541,7 +494,7 @@ li.nav-item:first-child::after {
 
 .menu-items>.row {
     display: none;
-    animation: FadeInTop2 1s;
+    animation: FadeInTop 1s;
 }
 
 .row.show {
@@ -613,7 +566,6 @@ li.nav-item:first-child::after {
 .contact-form {
     width: 80vw;
     margin: 3rem auto;
-    animation: FadeInBottom2 1s;
 }
 
 .contact-form>h3 {
@@ -623,18 +575,17 @@ li.nav-item:first-child::after {
 
 .contact-form>.input-group>input,
 .contact-form>textarea {
+    all: inherit;
     display: block;
     width: 100%;
-    border: none;
-    background: none;
-    outline: none;
     padding: 1rem;
-    font-size: 1rem;
-    font-family: inherit;
-    font-style: italic;
-    color: #333;
     border-bottom: 1px solid #000;
     margin-bottom: 2rem;
+}
+
+.contact-form>.input-group>input::placeholder,
+.contact-form>textarea::placeholder {
+    font-style: italic;
 }
 
 .contact-form>textarea {
@@ -733,6 +684,9 @@ li.nav-item:first-child::after {
         justify-content: space-between;
         align-items: center;
     }
+    .navbar-nav .nav-item {
+        margin-bottom: 0;
+    }
     .nav-item:hover,
     .nav-item:first-child {
         padding: .44rem 1rem;
@@ -743,7 +697,7 @@ li.nav-item:first-child::after {
     .banner>h1,
     .banner::after {
         font-size: 1.85rem;
-        margin: 0 2rem;
+        padding: 0 2rem;
     }
     .banner>img {
         width: 250px;
@@ -816,7 +770,6 @@ li.nav-item:first-child::after {
         justify-self: end;
         margin: 0;
         margin-bottom: 125px;
-        animation: MoveInLeft .3s ease-out;
     }
     .special-grid {
         grid-template-columns: repeat(3, 1fr);
@@ -846,16 +799,6 @@ li.nav-item:first-child::after {
     .about-content {
         width: 400px;
         margin: 0;
-    }
-    @keyframes MoveInLeft {
-        from {
-            opacity: 0;
-            transform: translateX(200px);
-        }
-        to {
-            opacity: 1;
-            transform: translateX(0);
-        }
     }
     .menu-items {
         height: 380px;
@@ -907,5 +850,39 @@ li.nav-item:first-child::after {
     #contact>.container {
         justify-content: end;
         padding-right: 4rem;
+    }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .banner,
+    .about-content>img {
+        transform: translateX(20%);
+    }
+    .item-icon,
+    .item-title,
+    .about-content>*,
+    .text-container>* {
+        transform: translateY(-.5rem);
+    }
+    .text-container>p {
+        transform: translateY(.5rem);
+    }
+    .contact-form {
+        transform: translateY(1rem);
+    }
+    .banner,
+    .item>*,
+    .text-container>*,
+    .about-content>*,
+    .contact-form {
+        opacity: 0;
+        transition-property: opacity, transform;
+        transition-duration: 1s;
+        transition-timing-function: var(--animation-bezier);
+    }
+    #root .animate,
+    #root .animate-children>* {
+        opacity: 1;
+        transform: none;
     }
 }

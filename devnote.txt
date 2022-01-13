@@ -8,3 +8,19 @@ https://lildude.co.uk/after-css-property-for-img-tag
 filter:brightness(5) property key value pair can whiten text and svg icons.
 https://stackoverflow.com/questions/7415872/change-color-of-png-image-via-css?rq=1
 https://www.freecodecamp.org/news/use-svg-images-in-css-html/
+
+2022-01-13
+-----------
+Use IntersectionObserver to trigger animation on scroll. It was previously done using offsetTop and offsetHeight properties and methods like Element.getBoundingClientRect().
+https://coolcssanimation.com/how-to-trigger-a-css-animation-on-scroll/
+https://stackoverflow.com/questions/54866560/same-intersection-observer-for-multiple-html-elements
+
+@media (prefers-reduced-motion: no-preference) {} for accessiblity. Show animation to people who haven't opt off animation.
+https://www.youtube.com/watch?v=hObPr5IfFVU
+
+setTimeout allows us to run a function once after the interval of time. 
+setInterval allows us to run a function repeatedly, starting after the interval of time, then repeating continuously at that interval.
+https://javascript.info/settimeout-setinterval
+
+CSS animation.
+https://coolcssanimation.com/
