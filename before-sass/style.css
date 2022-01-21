@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
 :root {
-    --hero1: url('assets/img/hero01.png');
-    --hero2: url('assets/img/hero02.png');
+    --hero1: url('../assets/img/hero01.png');
+    --hero2: url('../assets/img/hero02.png');
     --gradient-overlay: linear-gradient(90deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0.5) 100%);
     --border1: #333 solid 1px;
     --animation-bezier: cubic-bezier(.52, 0, 0, 1);
@@ -290,7 +290,7 @@ li.nav-item:first-child::after {
 
 .features {
     width: 100%;
-    background-image: url('assets/yellow-bg.png');
+    background-image: url('../assets/yellow-bg.png');
 }
 
 .features>.container {
@@ -430,7 +430,7 @@ li.nav-item:first-child::after {
 }
 
 #about>.container {
-    background-image: url(assets/img/beans.png);
+    background-image: url(../assets/img/beans.png);
     background-position: bottom -52vw left -32vw;
     background-size: 100%;
     background-repeat: no-repeat;
@@ -530,7 +530,7 @@ li.nav-item:first-child::after {
 }
 
 #contact {
-    background-image: url('assets/img/contact-bg.png');
+    background-image: url('../assets/img/contact-bg.png');
     background-position: bottom right;
     background-size: cover;
     background-repeat: no-repeat;
@@ -842,7 +842,7 @@ li.nav-item:first-child::after {
         height: 100%;
         position: absolute;
         top: 0;
-        background-image: url(assets/img/beans.png);
+        background-image: url(../assets/img/beans.png);
         background-position: right -50px top;
         background-repeat: no-repeat;
         background-size: 70%;

@@ -5,66 +5,66 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"> -->
+    <link rel="stylesheet" href="style.css">
     <title>Veggie</title>
 </head>
 
-<body>
-    <header class="header">
-        <div class="crossfade crossfade--overlay">
-            <div class="crossfade__bg crossfade__bg--top fadeinout"></div>
-            <div class="crossfade__bg crossfade__bg--bottom"></div>
+<body id="root">
+    <header>
+        <div class="hero-crossfade">
+            <div class="hero2"></div>
+            <div class="hero1"></div>
         </div>
-        <div class="container header__container">
+        <div class="container">
             <nav class="navbar">
-                <div class="container navbar__container">
+                <div class="container">
                     <button class="btn nav-toggle">
-                        <span class="hamburger-icon"></span>Menu
+                        <i class="hamburger-icon"><span></span><span></span><span></span></i><span>Menu</span>
                     </button>
-                    <ul class="nav-menu">
-                        <li class="nav-item border-animation">
-                            <a class="nav-link" href="/">Home</a>
-                        </li>
-                        <li class="nav-item border-animation">
-                            <a class="nav-link" href="#specials">Specials</a>
-                        </li>
-                        <li class="nav-item border-animation">
-                            <a class="nav-link" href="#about">About</a>
-                        </li>
-                        <li class="nav-item border-animation">
-                            <a class="nav-link" href="#menu-cart">Menu Cart</a>
-                        </li>
-                        <li class="nav-item border-animation">
-                            <a class="nav-link" href="#contact">Contact</a>
-                        </li>
-                    </ul>
+                    <div id="menu">
+                        <ul class="navbar-nav">
+                            <li class="nav-item border-animation">
+                                <a class="nav-link" href="#home">Home</a>
+                            </li>
+                            <li class="nav-item border-animation">
+                                <a class="nav-link" href="#specials">Specials</a>
+                            </li>
+                            <li class="nav-item border-animation">
+                                <a class="nav-link" href="#about">About</a>
+                            </li>
+                            <li class="nav-item border-animation">
+                                <a class="nav-link" href="#menu-cart">Menu Cart</a>
+                            </li>
+                            <li class="nav-item border-animation">
+                                <a class="nav-link" href="#contact">Contact</a>
+                            </li>
+                        </ul>
+
+                    </div>
                 </div>
             </nav>
-            <div class="banner animatable animate">
-                <h1 class="banner__heading">
-                    <span class="fadeinout">Veggie gram fava bean leek dandelion silver beet eggplant bush tomato</span>
-                    <!-- this is for aesthetic reason when website renders without css -->
-                    <br/>
-                    <span class="banner__heading--animate fadeoutin">Dandelion cucumber earthnut pea peanut soko zucchini</span>
-                </h1>
-                <img class="divider" src="assets/divider.svg" alt="divider">
+            <div class="banner animate">
+                <h1>Veggie gram fava bean leek dandelion silver beet eggplant bush tomato</h1>
+                <img src="../assets/divider.svg" alt="divider">
             </div>
         </div>
     </header>
     <section class="features">
         <div class="container">
             <div class="item animate-children">
-                <img src="assets/icon-vege.svg" alt="veg icon" class="item-icon">
+                <img src="../assets/icon-vege.svg" alt="veg icon" class="item-icon">
                 <h3 class="item-title">Turnip Greens</h3>
                 <p>Turnip greens yarrow ricebean rutabaga endive cauliflower sea lettuce kohlrabi amaranth water spinach avocado daikon napa cabbage.</p>
             </div>
             <div class="item animate-children">
-                <img src="assets/icon-coffee.svg" alt="coffee icon" class="item-icon">
+                <img src="../assets/icon-coffee.svg" alt="coffee icon" class="item-icon">
                 <h3 class="item-title">Beetroot water</h3>
                 <p>Nori grape silver beet broccoli kombu beet greens fava bean potato quandong celery. Bunya nuts black-eyed pea prairie turnip leek.</p>
             </div>
             <div class="item animate-children">
-                <img src="assets/icon-sweet.svg" alt="sweet icon" class="item-icon">
+                <img src="../assets/icon-sweet.svg" alt="sweet icon" class="item-icon">
                 <h3 class="item-title">Get social</h3>
                 <p>Pea horseradish azuki bean lettuce avocado asparagus okra. Kohlrabi radish okra azuki bean corn fava bean mustard tigernut jícama.</p>
             </div>
@@ -74,12 +74,12 @@
         <div class="container">
             <div class="section-title">
                 <h2>This month specials</h2>
-                <img src="assets/divider.svg" alt="divider">
+                <img src="../assets/divider.svg" alt="divider">
             </div>
             <div class="special-grid">
                 <div class="food-item">
                     <div class="img-box">
-                        <img src="assets/img/special-1.png" alt="food item 1">
+                        <img src="../assets/img/special-1.png" alt="food item 1">
                     </div>
                     <div class="text-box">
                         <div class="text-container animate-children">
@@ -91,7 +91,7 @@
                 </div>
                 <div class="food-item">
                     <div class="img-box">
-                        <img src="assets/img/special-2.png" alt="food item 2">
+                        <img src="../assets/img/special-2.png" alt="food item 2">
                     </div>
                     <div class="text-box">
                         <div class="text-container animate-children">
@@ -103,7 +103,7 @@
                 </div>
                 <div class="food-item">
                     <div class="img-box">
-                        <img src="assets/img/special-3.png" alt="food item 3">
+                        <img src="../assets/img/special-3.png" alt="food item 3">
                     </div>
                     <div class="text-box">
                         <div class="text-container animate-children">
@@ -115,7 +115,7 @@
                 </div>
                 <div class="food-item">
                     <div class="img-box">
-                        <img src="assets/img/special-4.png" alt="food item 4">
+                        <img src="../assets/img/special-4.png" alt="food item 4">
                     </div>
                     <div class="text-box">
                         <div class="text-container animate-children">
@@ -127,7 +127,7 @@
                 </div>
                 <div class="food-item">
                     <div class="img-box">
-                        <img src="assets/img/special-5.png" alt="food item 5">
+                        <img src="../assets/img/special-5.png" alt="food item 5">
                     </div>
                     <div class="text-box">
                         <div class="text-container animate-children">
@@ -139,7 +139,7 @@
                 </div>
                 <div class="food-item">
                     <div class="img-box">
-                        <img src="assets/img/special-6.png" alt="food item 6">
+                        <img src="../assets/img/special-6.png" alt="food item 6">
                     </div>
                     <div class="text-box">
                         <div class="text-container animate-children">
@@ -156,11 +156,11 @@
         <div class="container">
             <div class="section-title">
                 <h2>About us</h2>
-                <img src="assets/divider.svg" alt="divider">
+                <img src="../assets/divider.svg" alt="divider">
             </div>
             <div class="about-content animate-children">
                 <p>Nori grape silver beet broccoli kombu beet greens fava bean potato quandong celery. Bunya nuts black-eyed pea prairie turnip leek lentil turnip greens parsnip.</p>
-                <img src="assets/signature.png" alt="signature">
+                <img src="../assets/signature.png" alt="signature">
             </div>
         </div>
     </section>
@@ -168,7 +168,7 @@
         <div class="container">
             <div class="section-title">
                 <h2>Menu Cart</h2>
-                <img src="assets/divider.svg" alt="divider">
+                <img src="../assets/divider.svg" alt="divider">
             </div>
             <div class="menu-cart-content">
                 <div class="menu-item-groups">
@@ -467,7 +467,7 @@
             <div class="contact-content">
                 <div class="section-title">
                     <h2>Contact</h2>
-                    <img src="assets/divider.svg" alt="divider">
+                    <img src="../assets/divider.svg" alt="divider">
                 </div>
                 <div class="contact-info">
                     <div class="contact-item">
@@ -489,8 +489,8 @@
                     <button class="dark-animation" type="submit" disabled>Send</button>
                 </form>
                 <div class="social-icons">
-                    <picture class="dark-animation"><img src="assets/icon-fb.svg" alt="facebook icon"></picture>
-                    <picture class="dark-animation"><img src="assets/icon-insta.svg" alt="instagram icon"></picture>
+                    <picture class="dark-animation"><img src="../assets/icon-fb.svg" alt="facebook icon"></picture>
+                    <picture class="dark-animation"><img src="../assets/icon-insta.svg" alt="instagram icon"></picture>
                 </div>
             </div>
         </div>

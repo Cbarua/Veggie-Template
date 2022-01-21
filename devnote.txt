@@ -24,3 +24,67 @@ https://javascript.info/settimeout-setinterval
 
 CSS animation.
 https://coolcssanimation.com/
+
+2022-01-16
+-----------
+I commited "Completed website animation" 2 days ago.
+I made a mistake in the commit message and accidently pushed it before fixing it.
+I made 2 other commits without any making any changes to the files trying to fix it.
+Finally, I did it.
+The commands
+git reset --soft 3114fb6 -> Restored my project to the commit where I actually made changes.
+git commit --amend -m "Completed website animations" -> Changed the commit message.
+git push --force-with-lease origin test -> Force push over the old commit. 
+https://docs.github.com/en/pull-requests/committing-changes-to-your-project/creating-and-editing-commits/changing-a-commit-message
+https://www.git-tower.com/learn/git/faq/delete-commits
+https://www.git-tower.com/learn/git/faq/restore-repo-to-previous-revision
+
+I wondered why my .contact-form textarea margin and button margin overlapped.
+When two elements have vertical margins which touch each other, they effectively merge into one another.
+Margin means empty space. 
+When there is nothing in between (no element nor padding), margins of 2 elements collapses. 
+Use padding if background is needed.
+However, the direct descendants of grid and flex parents do not have collapsing margins.
+https://www.freecodecamp.org/news/css-margins/
+
+I made the hero images crossfade animation using this blog post.
+http://css3.bradshawenterprises.com/cfimg/#cfimg3
+
+I made the about section background image overflow with the help of this blog post.
+https://www.exratione.com/2011/09/how-to-overflow-a-background-image-using-css3/
+
+2022-01-16
+-----------
+I realized I can create header background overlay just by setting the opacity by seeing an example.
+https://thisthat.dev/display-none-vs-opacity-0-vs-visibility-hidden/
+
+I started to organize my css.
+http://getbem.com/
+http://smacss.com/
+https://www.youtube.com/watch?v=6co781JgoqQ
+https://www.smashingmagazine.com/2012/04/decoupling-html-from-css/
+https://www.smashingmagazine.com/2011/12/an-introduction-to-object-oriented-css-oocss/
+
+2022-01-20
+-----------
+I learned that mobile-first web development is the best way to go.
+Use 'min-width' media queries to change elements respond to large screen sizes.
+However, sometimes we go back to default styles for large screen.
+I noticed that with my .nav-menu class.
+I changed the media query 'max-width' to only apply those styles to mobile screens.
+https://www.freecodecamp.org/news/taking-the-right-approach-to-responsive-web-design/
+https://www.youtube.com/watch?v=_kF3k0vDMNA&t=1060s
+
+The media queries mixin
+https://dev.to/heytulsiprasad/easy-to-write-media-queries-using-sass-mixins-1p2f
+
+2022-01-21
+-----------
+I noticed I'm just doing the opposite of fadeinout animation in fadeoutin.
+I can just reversed the animation direction rather defining keyframes for a new animation.
+animation-direction: alternate-reverse;
+https://developer.mozilla.org/en-US/docs/Web/CSS/animation-direction
+
+I went to back to previous commit and came back to this. 
+Detached head. Easy fix. Just switch to the branch.
+https://www.cloudbees.com/blog/git-detached-head
