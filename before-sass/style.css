@@ -870,18 +870,21 @@ li.nav-item:first-child::after {
     .contact-form {
         transform: translateY(1rem);
     }
-    .banner,
-    .item>*,
-    .text-container>*,
-    .about-content>*,
-    .contact-form {
+    .animatable,
+    .animatable-children>* {
         opacity: 0;
+    }
+    body .animate,
+    body .animate-children>* {
+        opacity: 1;
+        transform: none;
         transition-property: opacity, transform;
         transition-duration: 1s;
         transition-timing-function: var(--animation-bezier);
     }
-    #root .animate,
-    #root .animate-children>* {
+    /* no js fallback */
+    .nojs .animatable,
+    .nojs .animatable-children>* {
         opacity: 1;
         transform: none;
     }

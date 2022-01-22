@@ -379,6 +379,13 @@ a {
   .animatable,
   .animatable-children > * {
     opacity: 0;
+  }
+  .animatable.animate,
+  .animatable-children.animate > *,
+  .nojs .animatable {
+    opacity: 1;
+    -webkit-transform: none;
+            transform: none;
     -webkit-transition-property: opacity, -webkit-transform;
     transition-property: opacity, -webkit-transform;
     transition-property: opacity, transform;
@@ -387,12 +394,6 @@ a {
             transition-duration: 1s;
     -webkit-transition-timing-function: cubic-bezier(0.52, 0, 0, 1);
             transition-timing-function: cubic-bezier(0.52, 0, 0, 1);
-  }
-  .animatable.animate,
-  .animatable-children.animate-children > * {
-    opacity: 1;
-    -webkit-transform: none;
-            transform: none;
   }
   .banner,
   .about-content > img {
@@ -413,21 +414,6 @@ a {
   .contact-form {
     -webkit-transform: translateY(1rem);
             transform: translateY(1rem);
-  }
-  .banner,
-  .item > *,
-  .text-container > *,
-  .about-content > *,
-  .contact-form {
-    opacity: 0;
-    -webkit-transition-property: opacity, -webkit-transform;
-    transition-property: opacity, -webkit-transform;
-    transition-property: opacity, transform;
-    transition-property: opacity, transform, -webkit-transform;
-    -webkit-transition-duration: 1s;
-            transition-duration: 1s;
-    -webkit-transition-timing-function: var(--animation-bezier);
-            transition-timing-function: var(--animation-bezier);
   }
 }
 /*# sourceMappingURL=style.css.map */

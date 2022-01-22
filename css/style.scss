@@ -311,14 +311,16 @@ a {
     .animatable,
     .animatable-children>* {
         opacity: 0;
+    }
+    .animatable.animate,
+    .animatable-children.animate>*,
+    .nojs .animatable {
+        // js disabled fallback
+        opacity: 1;
+        transform: none;
         transition-property: opacity, transform;
         transition-duration: 1s;
         transition-timing-function: $animation-bezier;
-    }
-    .animatable.animate,
-    .animatable-children.animate-children>* {
-        opacity: 1;
-        transform: none;
     }
     .banner,
     .about-content>img {
@@ -336,14 +338,10 @@ a {
     .contact-form {
         transform: translateY(1rem);
     }
-    .banner,
-    .item>*,
-    .text-container>*,
-    .about-content>*,
-    .contact-form {
-        opacity: 0;
-        transition-property: opacity, transform;
-        transition-duration: 1s;
-        transition-timing-function: var(--animation-bezier);
-    }
+    // To animate
+    // .banner,
+    // .item>*,
+    // .text-container>*,
+    // .about-content>*,
+    // .contact-form {}
 }

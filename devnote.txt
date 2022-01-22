@@ -87,4 +87,20 @@ https://developer.mozilla.org/en-US/docs/Web/CSS/animation-direction
 
 I went to back to previous commit and came back to this. 
 Detached head. Easy fix. Just switch to the branch.
+I had this issue before and fixed it using the post but didn't document.
 https://www.cloudbees.com/blog/git-detached-head
+
+2022-01-22
+-----------
+Don't move any file to any directory normally.
+The file moved tracked as a new file because git thinks the old file is deleted and a new file is created.
+It doesn't know it's the same file. Use 'git mv' to preserve the file history.
+I moved style.css, index.html, and script.js to before-sass folder and commited yesterday.
+index.html didn't move properly because I created a new html file with the same name but style.css did.
+Previously style.css became before-sass/style.css.
+index.html just got modified instead of renaming git file path.
+
+Animation on load wasn't smooth. 
+Fixed it by moving trasition related properties to '.animate' class from '.animatable' class.
+Added no js fallback.
+https://stackoverflow.com/questions/4665748/define-css-if-javascript-is-not-enabled/4665769
