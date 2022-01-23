@@ -296,7 +296,7 @@ li.nav-item:first-child::after {
 .features>.container {
     padding: 4rem 2rem;
     display: grid;
-    gap: 4rem;
+    gap: 4rem 2rem;
 }
 
 .item {
@@ -704,7 +704,7 @@ li.nav-item:first-child::after {
     }
     .features>.container {
         grid-auto-flow: column;
-        justify-content: space-between;
+        justify-content: space-around;
     }
     .item {
         max-width: 300px;

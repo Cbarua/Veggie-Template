@@ -19,13 +19,10 @@ for (let i = 0; i < menuItemBtns.length; i++) {
     });
 }
 
-const banner = document.querySelector('.banner');
-const items = document.querySelectorAll('.item');
-const specialTexts = document.querySelectorAll('#specials .text-container');
-const aboutTexts = document.querySelectorAll('#about .about-content');
-const contactForm = document.querySelector('.contact-form');
+const animatables = document.querySelectorAll('.animatable');
+const animatableChildren = document.querySelectorAll('.animatable-children');
 
-const observer1 = new IntersectionObserver(entries => {
+const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             entry.target.classList.add('animate');
@@ -33,23 +30,5 @@ const observer1 = new IntersectionObserver(entries => {
     });
 });
 
-const observer2 = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('animate-children');
-        }
-    });
-});
-
-observer1.observe(banner);
-observer1.observe(contactForm);
-
-items.forEach(e => {
-    observer2.observe(e);
-});
-specialTexts.forEach(e => {
-    observer2.observe(e);
-});
-aboutTexts.forEach(e => {
-    observer2.observe(e);
-});
+animatables.forEach(e => observer.observe(e));
+animatableChildren.forEach(e => observer.observe(e));
