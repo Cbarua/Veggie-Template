@@ -1,6 +1,6 @@
 document.querySelector('.nojs').classList.remove('nojs');
-const menuItemBtns = document.querySelectorAll('.group-item');
-const menuItemLists = document.querySelectorAll('.menu-items .row');
+const menuItemBtns = document.querySelectorAll('.menu-group__item');
+const menuItemLists = document.querySelectorAll('.menu-items__row');
 
 const resetState = (elements, className) => elements.forEach(element => element.classList.remove(className));
 /* another way of doing it */

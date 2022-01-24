@@ -559,7 +559,7 @@ a {
   }
 }
 
-.food-item__price-tag {
+.food-item__price {
   font-weight: bold;
   margin-top: 6px;
 }
@@ -675,6 +675,112 @@ a {
   width: 45%;
   max-width: 200px;
   margin-top: 2rem;
+}
+
+.menu-cart__container {
+  padding: 2rem 0;
+}
+
+.menu-cart-content {
+  font-weight: 100;
+}
+
+.menu-group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: .75rem;
+  padding: 0 .5rem;
+  margin: 2.5rem 0;
+}
+
+.menu-group__item {
+  padding: .6rem 1.125rem;
+}
+
+.menu-group__item.selected {
+  border: 1px solid #000;
+}
+
+.menu-group__item.selected::before, .menu-group__item.selected::after {
+  border: none;
+}
+
+.menu-items {
+  margin: 0 auto;
+  padding: 0 2rem;
+  width: 100%;
+  color: #333;
+}
+
+@media only screen and (min-width: 640px) {
+  .menu-items {
+    padding: 0 4rem;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .menu-items {
+    height: 380px;
+  }
+  .menu-items__col {
+    width: 50%;
+  }
+}
+
+.menu-items__row {
+  display: none;
+  -webkit-animation: FadeInTop 1s;
+          animation: FadeInTop 1s;
+}
+
+.menu-items__row.show {
+  display: block;
+}
+
+@media only screen and (min-width: 1024px) {
+  .menu-items__row.show {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-column-gap: 5rem;
+            column-gap: 5rem;
+  }
+}
+
+.menu-items__container {
+  width: 100%;
+}
+
+.menu-item__title {
+  background-image: radial-gradient(#3c3c3c 1px, #fff 0px);
+  background-size: 8px 8px;
+  background-repeat: repeat-x;
+  background-position: 0% 90%;
+}
+
+.menu-item__title > span {
+  background-color: #fff;
+  padding-right: .5rem;
+}
+
+.menu-item__price {
+  padding-left: .5rem;
+  width: 36px;
+}
+
+.menu-item__ingredients {
+  font-size: .9rem;
+  font-style: italic;
+  margin-bottom: 1rem;
+  display: block;
 }
 
 @media (prefers-reduced-motion: no-preference) {

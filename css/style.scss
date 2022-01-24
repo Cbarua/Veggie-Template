@@ -434,7 +434,7 @@ a {
             font-size: clamp(12px, 1.2vw, 14px);
         }
     }
-    &__price-tag {
+    &__price {
         font-weight: bold;
         margin-top: 6px;
     }
@@ -522,6 +522,86 @@ a {
         width: 45%;
         max-width: 200px;
         margin-top: 2rem;
+    }
+}
+
+.menu-cart__container {
+    padding: 2rem 0;
+}
+
+.menu-cart-content {
+    font-weight: 100;
+}
+
+.menu-group {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    gap: .75rem;
+    padding: 0 .5rem;
+    margin: 2.5rem 0;
+    &__item {
+        padding: .6rem 1.125rem;
+    }
+    &__item.selected {
+        border: 1px solid #000;
+    }
+    &__item.selected::before,
+    &__item.selected::after {
+        border: none;
+    }
+}
+
+.menu-items {
+    margin: 0 auto;
+    padding: 0 2rem;
+    width: 100%;
+    color: #333;
+    @include respond(mobile-large) {
+        padding: 0 4rem;
+    }
+    @include respond(laptop) {
+        height: 380px;
+        &__col {
+            width: 50%;
+        }
+    }
+    &__row {
+        display: none;
+        animation: FadeInTop 1s;
+        &.show {
+            display: block;
+            @include respond(laptop) {
+                display: flex;
+                column-gap: 5rem;
+            }
+        }
+    }
+    &__container {
+        width: 100%;
+    }
+}
+
+.menu-item {
+    &__title {
+        background-image: radial-gradient(#3c3c3c 1px, #fff 0px);
+        background-size: 8px 8px;
+        background-repeat: repeat-x;
+        background-position: 0% 90%;
+        &>span {
+            background-color: #fff;
+            padding-right: .5rem;
+        }
+    }
+    &__price {
+        padding-left: .5rem;
+        width: 36px;
+    }
+    &__ingredients {
+        font-size: .9rem;
+        font-style: italic;
+        margin-bottom: 1rem;
+        display: block;
     }
 }
 
