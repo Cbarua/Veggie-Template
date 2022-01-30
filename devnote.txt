@@ -104,3 +104,29 @@ Animation on load wasn't smooth.
 Fixed it by moving trasition related properties to '.animate' class from '.animatable' class.
 Added no js fallback.
 https://stackoverflow.com/questions/4665748/define-css-if-javascript-is-not-enabled/4665769
+
+2022-01-22
+-----------
+'textarea' element width went beyond its parent despite defining 'width: 100%'.
+It's because the global reset 'box-sizing: border-box' got overridden by 'all: unset'.
+Set the box-sizing again.
+
+'.contact-form' bottom margin went inside the following element.
+It's because setting 'transform: translateY(1rem)' for animation.
+Padding does that too.
+Increased the following element 'padding-top' to include the amount translated.
+
+2022-01-30
+-----------
+The '.divider' image inside the '.banner' element is kept appearing and disappearing.
+The problem is its 'z-index' property was affected by '.crossfade' element.
+That element affected the whole '.header__container' element and its children.
+Fixed it by setting 'position: relative' in '.header__container'.
+'z-index' only works on positioned elements.
+
+Animation is applied before the social icon images are loaded.
+It's apparent because the parents' borders are visible.
+Verified it using 'HTMLImageElement.complete' API.
+Wrapped the animation code inside 'window load' event.
+However, it still persists when the page is refreshed.
+https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement/complete

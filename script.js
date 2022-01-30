@@ -19,16 +19,18 @@ for (let i = 0; i < menuItemBtns.length; i++) {
     });
 }
 
-const animatables = document.querySelectorAll('.animatable');
-const animatableChildren = document.querySelectorAll('.animatable-children');
+window.addEventListener('load', () => {
+    const animatables = document.querySelectorAll('.animatable');
+    const animatableChildren = document.querySelectorAll('.animatable-children');
 
-const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('animate');
-        }
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animate');
+            }
+        });
     });
-});
 
-animatables.forEach(e => observer.observe(e));
-animatableChildren.forEach(e => observer.observe(e));
+    animatables.forEach(e => observer.observe(e));
+    animatableChildren.forEach(e => observer.observe(e));
+});
