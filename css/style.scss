@@ -77,8 +77,7 @@ a {
     &__container {
         height: 100%;
         display: grid;
-        grid-template-rows: min-content;
-        align-items: center;
+        grid-template-rows: repeat(3, 1fr);
         position: relative;
     }
 }
@@ -109,7 +108,7 @@ a {
 }
 
 .fadeinout {
-    animation: FadeInOut 10s ease-in-out infinite alternate;
+    animation: FadeInOut 5s ease-in-out infinite alternate;
 }
 
 .navbar {
@@ -178,7 +177,9 @@ a {
         @include respond(mobile-only) {
             display: block;
             position: absolute;
-            left: 5%;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
             margin-top: 5px;
             width: 90%;
             background-color: white;
@@ -246,14 +247,12 @@ a {
 .banner {
     text-align: center;
     margin: 0 1.5rem;
-    margin-bottom: 100px;
-    @include respond(mobile-large) {
-        margin-bottom: 50px;
-    }
-    @include respond(desktop) {
-        width: 500px;
+    align-self: center;
+    @include respond(laptop) {
+        width: 475px;
         justify-self: end;
-        margin-bottom: 125px;
+        margin: 0;
+        margin-top: -2.5rem;
     }
     &__heading {
         position: relative;
@@ -270,12 +269,17 @@ a {
             left: 0;
             bottom: 0;
             width: 100%;
+            @include respond(laptop) {
+                right: 0;
+                margin: 0 auto;
+                width: 367px;
+            }
         }
     }
 }
 
 .fadeoutin {
-    animation: FadeInOut 10s ease-in-out infinite alternate-reverse;
+    animation: FadeInOut 5s ease-in-out infinite alternate-reverse;
 }
 
 .divider {

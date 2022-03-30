@@ -55,12 +55,8 @@ a {
   height: 100%;
   display: -ms-grid;
   display: grid;
-  -ms-grid-rows: min-content;
-      grid-template-rows: -webkit-min-content;
-      grid-template-rows: min-content;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-grid-rows: (1fr)[3];
+      grid-template-rows: repeat(3, 1fr);
   position: relative;
 }
 
@@ -96,8 +92,8 @@ a {
 }
 
 .fadeinout {
-  -webkit-animation: FadeInOut 10s ease-in-out infinite alternate;
-          animation: FadeInOut 10s ease-in-out infinite alternate;
+  -webkit-animation: FadeInOut 5s ease-in-out infinite alternate;
+          animation: FadeInOut 5s ease-in-out infinite alternate;
 }
 
 .navbar {
@@ -191,7 +187,9 @@ a {
   .nav-menu {
     display: block;
     position: absolute;
-    left: 5%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
     margin-top: 5px;
     width: 90%;
     background-color: white;
@@ -269,21 +267,18 @@ a {
 .banner {
   text-align: center;
   margin: 0 1.5rem;
-  margin-bottom: 100px;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
 }
 
-@media only screen and (min-width: 640px) {
+@media only screen and (min-width: 1024px) {
   .banner {
-    margin-bottom: 50px;
-  }
-}
-
-@media only screen and (min-width: 1200px) {
-  .banner {
-    width: 500px;
+    width: 475px;
     -ms-grid-column-align: end;
         justify-self: end;
-    margin-bottom: 125px;
+    margin: 0;
+    margin-top: -2.5rem;
   }
 }
 
@@ -309,8 +304,16 @@ a {
   width: 100%;
 }
 
+@media only screen and (min-width: 1024px) {
+  .banner__heading--animate {
+    right: 0;
+    margin: 0 auto;
+    width: 367px;
+  }
+}
+
 .fadeoutin {
-  animation: FadeInOut 10s ease-in-out infinite alternate-reverse;
+  animation: FadeInOut 5s ease-in-out infinite alternate-reverse;
 }
 
 .divider {

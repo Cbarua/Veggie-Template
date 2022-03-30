@@ -130,3 +130,39 @@ Verified it using 'HTMLImageElement.complete' API.
 Wrapped the animation code inside 'window load' event.
 However, it still persists when the page is refreshed.
 https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement/complete
+
+2022-02-02
+-----------
+Found the exact cause of '.divider' image appearing and disappearing problem.
+It works fine when screen size is below 1024px.
+That's because '.crossfade .crossfade--overlay' element opacity is set to '.35'.
+It's opacity is set to '1' when screen size is more than 1023px.
+If'.header__container' position is not set to 'relative', it appears on top.
+
+Changed how I positioned '.banner' element inside the '.header__container'.
+It was using nasty margin-bottom to make it appear approximately center of '.header__container' in different screen sizes.
+I wanted a smooth way of doing it using different layout techniques.
+By trying out, I learned how flexbox and grid work a little bit more.
+It changed my understanding of 'align-*' and 'justify-*' properties.
+Divided '.header__container' into 3 rows by 'grid-template-rows: repeat(3, 1fr)'.
+Set 'align-self: center' on '.banner' to center it along its space.
+https://stackoverflow.com/questions/45536537/centering-in-css-grid
+https://stackoverflow.com/questions/49701408/css-grid-auto-height-rows-sizing-to-content/49701488
+https://www.joomlashack.com/blog/tutorials/center-and-align-items-in-css-grid/
+https://developer.mozilla.org/en-US/docs/Web/CSS/align-content
+https://developer.mozilla.org/en-US/docs/Web/CSS/align-items
+
+By trying to center '.banner', I also tried absolute positioning on '.navbar'.
+It broke the '.menu' element inside it.
+
+By trying to center '.banner', I found a way to make an element's height to fill the remaining height of the container.
+Set 'display: table' on the container element.
+Set 'display: table-row' on its children elements.
+The children will have equal height if no element has a fixed height.
+If an element has a fixed height, the other element or elements will take up the remaining height.
+https://www.w3docs.com/snippets/html/how-to-make-a-div-fill-the-height-of-the-remaining-space.html
+
+The above approach isn't ideal. Flexbox is better.
+Set 'display: flex; flex-flow: column' on the container element.
+Set 'flex' property on the child or children to adjust height.
+https://developer.mozilla.org/en-US/docs/Web/CSS/flex
